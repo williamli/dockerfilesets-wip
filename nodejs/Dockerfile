@@ -13,9 +13,13 @@ MAINTAINER William Li, williamli@quriousone.io
 RUN apt-get update
 RUN apt-get install -y nodejs
 RUN ln -fs /usr/bin/nodejs /usr/bin/node
-RUN curl https://npmjs.org/install.sh | sh
+#RUN curl https://npmjs.org/install.sh | sh
+RUN apt-get install -y npm
 
 RUN apt-get install -y vim
+
+# Install Forever
+RUN npm install forever -g
 
 # Bundle app source
 ADD . /app
@@ -30,4 +34,4 @@ RUN echo '\n# Node.js\nexport PATH="/app/node_modules/.bin:$PATH"' >> /root/.bas
 EXPOSE  8080
 
 # Define entrypoint, cmd can be used in docker run to point to different nodejs start file
-ENTRYPOINT ["node", "/app/"]
+ENTRYPOINT ["forever"]
