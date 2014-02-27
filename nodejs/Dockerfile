@@ -30,4 +30,4 @@ RUN echo '\n# Node.js\nexport PATH="/app/node_modules/.bin:$PATH"' >> /root/.bas
 EXPOSE  8080
 
 # Define entrypoint, cmd can be used in docker run to point to different nodejs start file
-ENTRYPOINT ["node"]
+ENTRYPOINT ["node", "/app/"]
