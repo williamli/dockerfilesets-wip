@@ -16,6 +16,9 @@ RUN ln -fs /bin/true /sbin/initctl
 RUN apt-get update
 RUN apt-get install -y mongodb-10gen
 
+# Install VIM
+RUN apt-get install -y vim
+
 # Create default MongoDB data directory.
 #RUN mkdir -p /data/db
 
