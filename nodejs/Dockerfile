@@ -8,9 +8,8 @@ FROM ubuntu:13.10
 MAINTAINER William Li, williamli@quriousone.io
 
 # Install Node.js
-#RUN apt-get install -y software-properties-common
-#RUN add-apt-repository -y ppa:chris-lea/node.js
 RUN apt-get update
+RUN apt-get install -y software-properties-common
 RUN apt-get install -y nodejs
 RUN ln -fs /usr/bin/nodejs /usr/bin/node
 #RUN curl https://npmjs.org/install.sh | sh
