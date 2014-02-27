@@ -1,0 +1,1 @@
+docker run -name node-helloworld.production -v /var/dockerstore/apps/node-helloworld/production/storage:/storage -d -p 127.0.0.1:8088:8080 oxygen/node-helloworld index.js

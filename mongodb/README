@@ -1,0 +1,1 @@
+docker run -name mongodb -v /var/dockerstore/oxygen/mongodb:/oxygen/mongodb -d -p 127.0.0.1:27017:27017 oxygen/mongodb
